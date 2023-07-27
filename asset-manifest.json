@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/beerbook/static/css/main.3cb65bb0.css",
+    "main.js": "/beerbook/static/js/main.7ca5e32b.js",
+    "static/js/216.5b47b73f.chunk.js": "/beerbook/static/js/216.5b47b73f.chunk.js",
+    "static/js/205.695b419a.chunk.js": "/beerbook/static/js/205.695b419a.chunk.js",
+    "static/js/721.07e691db.chunk.js": "/beerbook/static/js/721.07e691db.chunk.js",
+    "static/js/198.1c632d63.chunk.js": "/beerbook/static/js/198.1c632d63.chunk.js",
+    "static/js/468.0d8418a2.chunk.js": "/beerbook/static/js/468.0d8418a2.chunk.js",
+    "static/js/482.28ed1cc6.chunk.js": "/beerbook/static/js/482.28ed1cc6.chunk.js",
+    "static/media/default-recipe-image.png": "/beerbook/static/media/default-recipe-image.b4c105cdb05c67b429e6.png",
+    "index.html": "/beerbook/index.html",
+    "main.3cb65bb0.css.map": "/beerbook/static/css/main.3cb65bb0.css.map",
+    "main.7ca5e32b.js.map": "/beerbook/static/js/main.7ca5e32b.js.map",
+    "216.5b47b73f.chunk.js.map": "/beerbook/static/js/216.5b47b73f.chunk.js.map",
+    "205.695b419a.chunk.js.map": "/beerbook/static/js/205.695b419a.chunk.js.map",
+    "721.07e691db.chunk.js.map": "/beerbook/static/js/721.07e691db.chunk.js.map",
+    "198.1c632d63.chunk.js.map": "/beerbook/static/js/198.1c632d63.chunk.js.map",
+    "468.0d8418a2.chunk.js.map": "/beerbook/static/js/468.0d8418a2.chunk.js.map",
+    "482.28ed1cc6.chunk.js.map": "/beerbook/static/js/482.28ed1cc6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3cb65bb0.css",
+    "static/js/main.7ca5e32b.js"
+  ]
+}

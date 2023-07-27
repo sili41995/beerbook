@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkbeerbook=self.webpackChunkbeerbook||[]).push([[216],{7216:function(e,n,u){u.r(n);var o=u(184);n.default=function(){return(0,o.jsx)("div",{children:"NotFound"})}}}]);
+//# sourceMappingURL=216.5b47b73f.chunk.js.map
