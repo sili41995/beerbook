@@ -1,13 +1,13 @@
 import { Link, useLocation } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import RecipeListItem from 'components/RecipeListItem';
-import useRecipes from 'store/recipes/store';
+import useRecipes from 'store/store';
 import { Item, List } from './RecipesList.styled';
 import {
   selectAddRecipeIdToDeleteCollection,
   selectRecipes,
   selectRecipesIdToDelete,
-} from 'store/recipes/selectors';
+} from 'store/selectors';
 
 const RecipesList = ({ link }) => {
   const location = useLocation();

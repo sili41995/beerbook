@@ -11,9 +11,12 @@ import {
   selectLastPage,
   selectRecipes,
   selectStatus,
-} from 'store/recipes/selectors';
-import useRecipes from 'store/recipes/store';
+} from 'store/selectors';
+import useRecipes from 'store/store';
 import { statuses } from 'store/statuses';
+
+const notifyError = () =>
+  toast.error("We're sorry, but you've reached the last page.");
 
 const Recipes = ({ link = '' }) => {
   const fetchRecipes = useRecipes(selectFetchRecipes);
@@ -22,12 +25,10 @@ const Recipes = ({ link = '' }) => {
   const incrementPage = useRecipes(selectIncrementPage);
   const error = useRecipes(selectError);
   const lastPage = useRecipes(selectLastPage);
-  const notify = () =>
-    toast.error("We're sorry, but you've reached the last page.");
 
   useEffect(() => {
     if (lastPage) {
-      notify();
+      notifyError();
     }
   }, [lastPage]);
 

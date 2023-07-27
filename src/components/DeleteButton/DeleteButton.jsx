@@ -1,11 +1,8 @@
 import { createPortal } from 'react-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import { Button } from './DeleteButton.styled';
-import useRecipes from 'store/recipes/store';
-import {
-  selectDeleteRecipes,
-  selectRecipesIdToDelete,
-} from 'store/recipes/selectors';
+import useRecipes from 'store/store';
+import { selectDeleteRecipes, selectRecipesIdToDelete } from 'store/selectors';
 
 const DeleteButton = () => {
   const recipesIdToDelete = useRecipes(selectRecipesIdToDelete);

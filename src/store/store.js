@@ -1,6 +1,7 @@
-import { statuses } from 'store/statuses';
-import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
+import { create } from 'zustand';
+import BASE_URL from 'services/baseUrl';
+import { statuses } from 'store/statuses';
 
 const useRecipes = create(
   devtools((set, get) => ({
@@ -47,9 +48,7 @@ const useRecipes = create(
     fetchRecipes: async () => {
       set({ status: statuses.pending, error: null });
       try {
-        const response = await fetch(
-          `https://api.punkapi.com/v2/beers?page=${get().page}`
-        );
+        const response = await fetch(`${BASE_URL}?page=${get().page}`);
         if (!response.ok) {
           throw new Error('Failed to loading! Please, try again!');
         }
