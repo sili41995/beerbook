@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 const Message = styled.p`
   font-family: 500;
   font-size: 28px;
-  min-height: 1000px;
 `;
 
 const ProjectDescription = () => (
