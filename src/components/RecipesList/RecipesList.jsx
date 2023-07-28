@@ -1,54 +1,18 @@
-import { Link, useLocation } from 'react-router-dom';
-import toast, { Toaster } from 'react-hot-toast';
-import RecipeListItem from 'components/RecipeListItem';
+import { Toaster } from 'react-hot-toast';
 import useRecipes from 'store/store';
-import { Item, List } from './RecipesList.styled';
-import {
-  selectAddRecipeIdToDeleteCollection,
-  selectRecipes,
-  selectRecipesIdToDelete,
-} from 'store/selectors';
+import { selectRecipes } from 'store/selectors';
+import RecipesLazyList from 'components/RecipesLazyList';
 
 const RecipesList = ({ link }) => {
-  const location = useLocation();
   const recipes = useRecipes(selectRecipes);
-  const addRecipeIdToDeleteCollection = useRecipes(
-    selectAddRecipeIdToDeleteCollection
+
+  const recipesToRender = recipes.filter(
+    (_, index) => index >= 0 && index <= 14
   );
-  const recipesIdToDelete = useRecipes(selectRecipesIdToDelete);
-
-  const recipesToRender = recipes.slice(0, 15);
-
-  const addRecipeNotify = () => toast.success('Recipe add to delete list');
-  const removeRecipeNotify = () =>
-    toast.error('Recipe remove from delete list');
-
-  const handleContextMenu = (e, id) => {
-    e.preventDefault();
-    addRecipeIdToDeleteCollection(id);
-    if (recipesIdToDelete.includes(id)) {
-      removeRecipeNotify();
-      return;
-    }
-    addRecipeNotify();
-  };
 
   return (
     <>
-      <List>
-        {recipesToRender.map((recipe) => (
-          <Item
-            key={recipe.id}
-            onContextMenu={(e) => {
-              handleContextMenu(e, recipe.id);
-            }}
-          >
-            <Link to={`${link}${recipe.id}`} state={{ from: location }}>
-              <RecipeListItem recipe={recipe} />
-            </Link>
-          </Item>
-        ))}
-      </List>
+      <RecipesLazyList recipes={recipesToRender} link={link} />
       <Toaster />
     </>
   );
