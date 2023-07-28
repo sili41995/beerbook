@@ -8,7 +8,7 @@ const Message = styled.p`
 const ProjectDescription = () => (
   <Message>
     Цей додаток було створено з метою демонстрації потенційному роботодавцю моїх
-    навичок роботи з HTML, CSS, JavaScript, React, React Router та Zustand.
+    навичок роботи з HTML, CSS, JavaScript, React, React Router, Intersection Observer API та Zustand.
     Додаток було створено без бібліоткеки Axios для вдосконалення навичок роботи
     з HTTP-запитами.
   </Message>
