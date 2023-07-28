@@ -1,4 +1,5 @@
 import { Card, Comment, Image, Subtitle } from './RecipeListItem.styled';
+import defaultRecipeImage from '../default-recipe-image.png';
 
 const Recipe = ({ recipe }) => {
   const {
@@ -11,9 +12,11 @@ const Recipe = ({ recipe }) => {
     contributed_by: contributedBy,
   } = recipe;
 
+  const recipeImage = imageURL ? imageURL : defaultRecipeImage;
+
   return (
     <Card>
-      <Image src={`${imageURL}`} alt="bottle of beer" />
+      <Image src={`${recipeImage}`} alt="bottle of beer" />
       <div>
         <h2>{name}</h2>
         <p>

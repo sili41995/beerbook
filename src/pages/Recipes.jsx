@@ -11,6 +11,7 @@ import {
   selectLastPage,
   selectRecipes,
   selectStatus,
+  selectRecipesIdToDelete,
 } from 'store/selectors';
 import useRecipes from 'store/store';
 import { statuses } from 'store/statuses';
@@ -19,6 +20,7 @@ const notifyError = () =>
   toast.error("We're sorry, but you've reached the last page.");
 
 const Recipes = ({ link = '' }) => {
+  const recipesIdToDelete = useRecipes(selectRecipesIdToDelete);
   const fetchRecipes = useRecipes(selectFetchRecipes);
   const recipes = useRecipes(selectRecipes);
   const status = useRecipes(selectStatus);
@@ -50,7 +52,7 @@ const Recipes = ({ link = '' }) => {
       {status === statuses.resolved && (
         <>
           <RecipesList recipes={recipes} link={link} />
-          <DeleteButton />
+          {!!recipesIdToDelete.length && <DeleteButton />}
         </>
       )}
       {status === statuses.rejected && <ErrorMessage error={error} />}
