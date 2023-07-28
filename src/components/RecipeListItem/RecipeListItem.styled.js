@@ -6,6 +6,10 @@ export const Card = styled.article`
   padding: 12px;
   border-radius: 10px;
   gap: 20px;
+  &:hover,
+  &:focus {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
 `;
 
 export const Image = styled.img`
