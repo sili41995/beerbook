@@ -53,7 +53,7 @@ const RecipesLazyList = ({ recipes, link }) => {
     if (!stopObserve) {
       const intersectionCallback = (entries, observer) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (recipesToRender.length && entry.isIntersecting) {
             if (
               recipesToRender[recipesToRender.length - 1]?.id ===
               recipes[recipes.length - 1].id
